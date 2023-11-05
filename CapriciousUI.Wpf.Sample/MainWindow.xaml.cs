@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Liberfy.UI.Wpf.Sample;
+namespace CapriciousUI.Wpf.Sample;
 /// <summary>
 /// Interaction logic for MainWindow.xaml
 /// </summary>

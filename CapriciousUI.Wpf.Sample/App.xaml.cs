@@ -1,8 +1,6 @@
-﻿using System.Configuration;
-using System.Data;
-using System.Windows;
+﻿using System.Windows;
 
-namespace Liberfy.UI.Wpf.Sample;
+namespace CapriciousUI.Wpf.Sample;
 /// <summary>
 /// Interaction logic for App.xaml
 /// </summary>

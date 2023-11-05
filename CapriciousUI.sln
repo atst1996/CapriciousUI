@@ -9,9 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ソリューション項目
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Liberfy.UI.Wpf", "Liberfy.UI.WPF\Liberfy.UI.Wpf.csproj", "{C108B223-6AFD-4CCC-BEE7-AFABADCC5286}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapriciousUI.Wpf", "CapriciousUI.Wpf\CapriciousUI.Wpf.csproj", "{C108B223-6AFD-4CCC-BEE7-AFABADCC5286}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Liberfy.UI.Wpf.Sample", "Liberfy.UI.WPF.Sample\Liberfy.UI.Wpf.Sample.csproj", "{42353704-54C4-4F3A-978B-A605D582AC2E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapriciousUI.Wpf.Sample", "CapriciousUI.Wpf.Sample\CapriciousUI.Wpf.Sample.csproj", "{42353704-54C4-4F3A-978B-A605D582AC2E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
