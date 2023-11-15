@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:CapriciousUI.Wpf.Sample"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <local:MainWindowViewModel />
+    </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -14,7 +17,7 @@
         </Grid.RowDefinitions>
 
         <Menu Grid.Row="0">
-            <MenuItem Header="Menu1">
+            <MenuItem Header="ファイル(_F)">
                 <MenuItem Header="Submenu1">
                     <MenuItem Header="Submenu1-1" IsEnabled="False" />
                     <Separator />
@@ -28,15 +31,255 @@
         </Menu>
 
         <ToolBarTray Grid.Row="1">
-            <ToolBar ToolBarTray.IsLocked="False">
-                <Button Content="Button1" />
-                <Button Content="Button2" />
-                <Button Content="Button3" />
-                <TextBox ToolBar.OverflowMode="Always" MinWidth="100" />
+            <ToolBar ToolBarTray.IsLocked="False" Band="0">
+                <Button Content="Button" />
+                <Separator />
+                <Label Content="Label" />
+                <TextBox Width="100" />
+                <ComboBox IsEditable="True" Width="100" />
+                <Label Content="Theme" />
+                <ComboBox SelectedIndex="1" SelectionChanged="OnThemeSelectionChanged">
+                    <ComboBoxItem Content="None" />
+                    <ComboBoxItem Content="Light" />
+                </ComboBox>
             </ToolBar>
         </ToolBarTray>
 
-        <StackPanel Grid.Row="2">
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <TabControl Grid.Column="1">
+                <!-- Button -->
+                <TabItem Header="Button">
+                    <StackPanel Margin="8">
+                        <TextBlock  Margin="4" Text="Button" />
+                        <StackPanel Orientation="Horizontal">
+                            <Button Content="Normal" Width="120" />
+                            <Button Content="Disabled" Margin="4,0,0,0" Width="120" IsEnabled="False" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="0,4,0,0">
+                            <Button Style="{DynamicResource Button.Primary}" Content="Primary" Width="120" />
+                            <Button Style="{DynamicResource Button.Primary}" Content="Disabled" Margin="4,0,0,0" Width="120" IsEnabled="False" />
+                            <Button Style="{DynamicResource Button.Danger}" Content="Danger" Margin="4,0,0,0" Width="120" />
+                            <Button Style="{DynamicResource Button.Danger}" Content="Disabled" Margin="4,0,0,0" Width="120" IsEnabled="False" />
+                        </StackPanel>
+
+                        <TextBlock  Margin="4,16,4,4" Text="ToggleButton" />
+
+                        <StackPanel Orientation="Horizontal">
+                            <ToggleButton Content="Normal" Width="120" />
+                            <ToggleButton Content="Disabled" Margin="4,0,0,0" Width="120" IsEnabled="False" IsChecked="True" />
+                            <ToggleButton Content="Disabled" Margin="4,0,0,0" Width="120" IsEnabled="False" IsChecked="False" />
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem>
+
+                <!-- CheckBox/RadioButton -->
+                <TabItem Header="CheckBox/RadioButton">
+                    <StackPanel Margin="8">
+                        <!-- CheckBox -->
+                        <TextBlock Margin="0,4" Text="CheckBox" />
+                        <StackPanel Orientation="Horizontal">
+                            <CheckBox IsThreeState="True" Width="120" IsChecked="False" Content="Unchecked" />
+                            <CheckBox IsThreeState="True" Width="120" Margin="4,0,0,0" IsChecked="True" Content="Checked" />
+                            <CheckBox IsThreeState="True" Width="120" Margin="4,0,0,0" IsChecked="{x:Null}" Content="ThreeState" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                            <CheckBox IsThreeState="True" Width="120" IsEnabled="False" IsChecked="False" Content="Disabled" />
+                            <CheckBox IsThreeState="True" Width="120" IsEnabled="False" Margin="4,0,0,0" IsChecked="True" Content="Checked" />
+                            <CheckBox IsThreeState="True" Width="120" IsEnabled="False" Margin="4,0,0,0" IsChecked="{x:Null}" Content="ThreeState" />
+                        </StackPanel>
+
+                        <!-- RadioButton -->
+                        <TextBlock  Text="RadioButton" Margin="0,8,0,4" />
+                        <StackPanel Orientation="Horizontal">
+                            <RadioButton IsThreeState="True" Width="120" IsChecked="False" Content="Unchecked" />
+                            <RadioButton IsThreeState="True" Width="120" Margin="4,0,0,0" IsChecked="True" Content="Checked" />
+                            <RadioButton IsThreeState="True" Width="120" Margin="4,0,0,0" IsChecked="{x:Null}" Content="ThreeState" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="0,16,0,0">
+                            <RadioButton IsThreeState="True" Width="120" IsEnabled="False" IsChecked="False" Content="Disabled" />
+                            <RadioButton IsThreeState="True" Width="120" IsEnabled="False" Margin="4,0,0,0" IsChecked="True" Content="Checked" />
+                            <RadioButton IsThreeState="True" Width="120" IsEnabled="False" Margin="4,0,0,0" IsChecked="{x:Null}" Content="ThreeState" />
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem>
+
+                <TabItem Header="ListBox">
+                    <ListBox>
+                        <ListBoxItem Content="Item1" />
+                        <ListBoxItem Content="Item2" />
+                        <ListBoxItem Content="Item3" />
+                        <ListBoxItem Content="Item4" />
+                        <ListBoxItem Content="Item5" />
+                        <ListBoxItem Content="Item6" />
+                        <ListBoxItem Content="Item7" />
+                        <ListBoxItem Content="Item8" />
+                        <ListBoxItem Content="Item9" />
+                        <ListBoxItem Content="Item10" />
+                    </ListBox>
+                </TabItem>
+
+                <TabItem Header="ListView">
+                    <ListView>
+                        <ListViewItem Content="Item1" />
+                        <ListViewItem Content="Item2" />
+                        <ListViewItem Content="Item3" />
+                        <ListViewItem Content="Item4" />
+                        <ListViewItem Content="Item5" />
+                        <ListViewItem Content="Item6" />
+                        <ListViewItem Content="Item7" />
+                        <ListViewItem Content="Item8" />
+                        <ListViewItem Content="Item9" />
+                        <ListViewItem Content="Item10" />
+                    </ListView>
+                </TabItem>
+
+                <!-- TabControl -->
+                <TabItem Header="TabControl">
+                    <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto">
+                        <StackPanel Margin="8">
+                            <TextBlock Text="TabControl" />
+
+                            <TabControl Margin="0,8" Height="100">
+                                <TabItem Header="Item1">
+                                    <Label Content="TabItem 1" />
+                                </TabItem>
+                                <TabItem Header="Item2">
+                                    <TextBox AcceptsReturn="True" Margin="4" Text="Sample textbox" />
+                                </TabItem>
+                            </TabControl>
+
+                            <TextBlock Margin="0,16,0,8" Text="HeaderlessTabControl" />
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <ListBox
+                                    Grid.Column="0" DisplayMemberPath="Header" Focusable="True"
+                                    ItemsSource="{Binding ElementName=PART_HeaderlessTabControl, Path=Items, Mode=OneWay}"
+                                    SelectedItem="{Binding ElementName=PART_HeaderlessTabControl, Path=SelectedItem, Mode=OneWayToSource}" />
+
+                                <TabControl Grid.Column="1" Name="PART_HeaderlessTabControl" Style="{DynamicResource HeaderlessTabControl}">
+                                    <TabItem Header="Item1">
+                                        <Label Content="TabItem 1" />
+                                    </TabItem>
+                                    <TabItem Header="Item2">
+                                        <TextBox AcceptsReturn="True" Margin="4" Text="Sample textbox" />
+                                    </TabItem>
+                                </TabControl>
+                            </Grid>
+                        </StackPanel>
+                    </ScrollViewer>
+                </TabItem>
+
+                <!-- TextBox -->
+                <TabItem Header="TextBox">
+                    <StackPanel Margin="4">
+                        <TextBox Margin="4" />
+                        <TextBox Margin="4" AcceptsReturn="True" Height="80" VerticalScrollBarVisibility="Auto" />
+                        <TextBox Margin="4">
+                            <TextBox.Text>
+                                <Binding Path="SampleIntValue" UpdateSourceTrigger="PropertyChanged">
+                                    <Binding.ValidationRules>
+                                        <local:IntegerValidationRule />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </TextBox.Text>
+                        </TextBox>
+                    </StackPanel>
+                </TabItem>
+
+                <!-- ToolBar -->
+                <TabItem Header="ToolBar">
+                    <ToolBarTray>
+                        <!-- CheckBox -->
+                        <ToolBar ToolBarTray.IsLocked="False" Band="1">
+                            <Label Content="Button" />
+                            <Button Content="Normal" />
+                            <Button Content="Disabled" />
+                        </ToolBar>
+
+                        <!--ToggleButton-->
+                        <ToolBar ToolBarTray.IsLocked="False" Band="1">
+                            <Label Content="Toggle" />
+                            <ToggleButton IsThreeState="True" IsChecked="False" Content="Unchecked" />
+                            <ToggleButton IsThreeState="True" IsChecked="True" Content="Checked" />
+                            <ToggleButton IsThreeState="True" IsChecked="{x:Null}" Content="ThreeState" />
+                            <ToggleButton IsThreeState="True" IsEnabled="False" IsChecked="False" Content="Unchecked" />
+                            <ToggleButton IsThreeState="True" IsEnabled="False" IsChecked="True" Content="Checked" />
+                            <ToggleButton IsThreeState="True" IsEnabled="False" IsChecked="{x:Null}" Content="ThreeState" />
+                        </ToolBar>
+
+                        <!--ToggleButton-->
+                        <ToolBar ToolBarTray.IsLocked="False" Band="2">
+                            <Label Content="Check" />
+                            <CheckBox IsThreeState="True" IsChecked="False" Content="Unchecked" />
+                            <CheckBox IsThreeState="True" IsChecked="True" Content="Checked" />
+                            <CheckBox IsThreeState="True" IsChecked="{x:Null}" Content="ThreeState" />
+                            <CheckBox IsThreeState="True" IsEnabled="False" IsChecked="False" Content="Unchecked" />
+                            <CheckBox IsThreeState="True" IsEnabled="False" IsChecked="True" Content="Checked" />
+                            <CheckBox IsThreeState="True" IsEnabled="False" IsChecked="{x:Null}" Content="ThreeState" />
+                        </ToolBar>
+
+                        <!--RadioButton-->
+                        <ToolBar ToolBarTray.IsLocked="False" Band="2">
+                            <Label Content="Radio" />
+                            <RadioButton IsThreeState="True" IsChecked="False" Content="Unchecked" />
+                            <RadioButton IsThreeState="True" IsChecked="True" Content="Checked" />
+                            <RadioButton IsThreeState="True" IsChecked="{x:Null}" Content="ThreeState" />
+                            <RadioButton IsThreeState="True" IsEnabled="False" IsChecked="False" Content="Unchecked" />
+                            <RadioButton IsThreeState="True" IsEnabled="False" IsChecked="True" Content="Checked" />
+                            <RadioButton IsThreeState="True" IsEnabled="False" IsChecked="{x:Null}" Content="ThreeState" />
+                        </ToolBar>
+
+                        <!-- TextBox -->
+                        <ToolBar ToolBarTray.IsLocked="False" Band="3">
+                            <Label Content="TextBox" />
+                            <TextBox Width="120" />
+                            <TextBox Width="120" IsEnabled="False" Text="Disabled" />
+                        </ToolBar>
+
+                        <!-- ComboBox -->
+                        <ToolBar ToolBarTray.IsLocked="False" Band="3">
+                            <Label Content="ComboBox" />
+                            <ComboBox Width="100" SelectedIndex="0">
+                                <ComboBoxItem Content="Item1" />
+                                <ComboBoxItem Content="Item2" />
+                                <ComboBoxItem Content="Item3" />
+                            </ComboBox>
+                            <ComboBox Width="100" SelectedIndex="0" IsEditable="True" Text="Editable">
+                                <ComboBoxItem Content="Item1" />
+                                <ComboBoxItem Content="Item2" />
+                                <ComboBoxItem Content="Item3" />
+                            </ComboBox>
+                            <ComboBox Width="100" IsEnabled="False" SelectedIndex="0">
+                                <ComboBoxItem Content="Item1" />
+                                <ComboBoxItem Content="Item2" />
+                                <ComboBoxItem Content="Item3" />
+                            </ComboBox>
+                            <ComboBox Width="100" SelectedIndex="0" IsEditable="True" Text="Editable" IsEnabled="False">
+                                <ComboBoxItem Content="Item1" />
+                                <ComboBoxItem Content="Item2" />
+                                <ComboBoxItem Content="Item3" />
+                            </ComboBox>
+                        </ToolBar>
+                    </ToolBarTray>
+                </TabItem>
+            </TabControl>
+        </Grid>
+
+        <!--<StackPanel Grid.Row="2">
+
+
+
             <Button Margin="4" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Context menu test">
                 <Button.ContextMenu>
                     <ContextMenu>
@@ -65,6 +308,6 @@
                 <ComboBoxItem Content="Item 2" />
                 <ComboBoxItem Content="Item 3" />
             </ComboBox>
-        </StackPanel>
+        </StackPanel>-->
     </Grid>
 </Window>
