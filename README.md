@@ -8,25 +8,21 @@
 
 ## WPFでの使用方法
 1. 任意のWPFプロジェクトに`CapriciousUI.Wpf`への参照を追加する。
-2. App.xamlなどの`ResourceDictionary`に `pack://application:,,,/CapriciousUI.Wpf;component/Themes/Light.xaml`への参照を追加する。
+2. App.xamlで`ThemeManager.Theme`を設定する。
 3. プロジェクトを再ビルドする。
 
 以上の手順を実施後、WPFアプリケーションを起動するとUIの外観が変更されているかと思います。
 
 App.xamlの変更例:
-```xml
+```xml:App.xaml
 <Application x:Class="SampleProject.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:SampleProject"
-             StartupUri="MainWindow.xaml">
-    <Application.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/CapriciousUI.Wpf;component/Themes/Light.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Application.Resources>
+             StartupUri="MainWindow.xaml"
+             xmlns:theme="clr-namespace:CapriciousUI.Wpf;assembly=CapriciousUI.Wpf"
+             theme:ThemeManager.Theme="Light">>
+..省略..
 </Application>
 
 ```
