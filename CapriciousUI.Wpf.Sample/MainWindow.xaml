@@ -62,10 +62,10 @@
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal" Margin="0,4,0,0">
-                            <Button Style="{DynamicResource Button.Primary}" Content="Primary" Width="120" />
-                            <Button Style="{DynamicResource Button.Primary}" Content="Disabled" Margin="4,0,0,0" Width="120" IsEnabled="False" />
-                            <Button Style="{DynamicResource Button.Danger}" Content="Danger" Margin="4,0,0,0" Width="120" />
-                            <Button Style="{DynamicResource Button.Danger}" Content="Disabled" Margin="4,0,0,0" Width="120" IsEnabled="False" />
+                            <Button Style="{DynamicResource PrimaryButtonStyle}" Content="Primary" Width="120" />
+                            <Button Style="{DynamicResource PrimaryButtonStyle}" Content="Disabled" Margin="4,0,0,0" Width="120" IsEnabled="False" />
+                            <Button Style="{DynamicResource DangerButtonStyle}" Content="Danger" Margin="4,0,0,0" Width="120" />
+                            <Button Style="{DynamicResource DangerButtonStyle}" Content="Disabled" Margin="4,0,0,0" Width="120" IsEnabled="False" />
                         </StackPanel>
 
                         <TextBlock  Margin="4,16,4,4" Text="ToggleButton" />
@@ -108,6 +108,26 @@
                             <RadioButton IsThreeState="True" Width="120" IsEnabled="False" Margin="4,0,0,0" IsChecked="True" Content="Checked" />
                             <RadioButton IsThreeState="True" Width="120" IsEnabled="False" Margin="4,0,0,0" IsChecked="{x:Null}" Content="ThreeState" />
                         </StackPanel>
+                    </StackPanel>
+                </TabItem>
+
+                <TabItem Header="ComboBox">
+                    <StackPanel Margin="4">
+                        <ComboBox Margin="4" SelectedIndex="0">
+                            <ComboBoxItem Content="Item 1" />
+                            <ComboBoxItem Content="Item 2" />
+                            <ComboBoxItem Content="Item 3" />
+                        </ComboBox>
+
+                        <ComboBox Margin="4" IsEditable="True" SelectedIndex="0">
+                            <ComboBoxItem Content="Item 1" />
+                            <ComboBoxItem Content="Item 2" />
+                            <ComboBoxItem Content="Item 3" />
+                        </ComboBox>
+
+                        <ComboBox Margin="4"
+                                  IsEditable="True"
+                                  Text="{Binding SampleIntValue, UpdateSourceTrigger=PropertyChanged}" />
                     </StackPanel>
                 </TabItem>
 
