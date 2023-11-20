@@ -109,7 +109,6 @@ public static class ThemeManager
 
         // テーマリソースを追加
         resDict.MergedDictionaries.Add(new() { Source = GetResourceUri("Themes/Light.xaml") });
-        resDict.MergedDictionaries.Add(new() { Source = GetResourceUri("Themes/Internal/Common.xaml") });
 
         // 個別のリソースを追加
         // TextBoxのコンテキストメニューにテーマを適用する
