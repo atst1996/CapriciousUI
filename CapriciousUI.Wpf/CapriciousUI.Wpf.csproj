@@ -13,17 +13,16 @@
 	<LangVersion>preview</LangVersion>
 	<PublishSingleFile>true</PublishSingleFile>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Title>Liberfy.UI.Wpf</Title>
+    <Title>CapriciousUI.Wpf</Title>
 	<Version>0.0.1</Version>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>Liberfy UI WPF Xaml</PackageTags>
-    <Authors>atst_96</Authors>
-    <Product>Liberfy.UI</Product>
-    <Copyright>Copyright (c) 2023 atst_96</Copyright>
-    <PackageProjectUrl>https://github.com/atst1996/Liberfy.UI</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/atst1996/Liberfy.UI.git</RepositoryUrl>
+    <PackageTags>Capricious UI WPF Xaml</PackageTags>
+    <Authors>atst96</Authors>
+    <Product>CapriciousUI</Product>
+    <Copyright>Copyright (c) 2023 atst96</Copyright>
+    <PackageProjectUrl>https://github.com/atst96/CapriciousUI</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/atst96/CapriciousUI.git</RepositoryUrl>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 	<PackRelease>true</PackRelease>
