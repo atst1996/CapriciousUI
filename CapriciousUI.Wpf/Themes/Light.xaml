@@ -2,53 +2,175 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <SolidColorBrush x:Key="Theme.ToolBar.ForegroundBrush" Color="#444" />
-    <SolidColorBrush x:Key="Theme.ToolBar.BorderBrush" Color="#DADADA" />
-    <SolidColorBrush x:Key="Theme.ToolBar.BackgroundBrush" Color="#F8F8F8" />
+    <Color x:Key="Theme.AccentColor">#07c</Color>
+    <SolidColorBrush x:Key="Theme.AccentColorBrush" Color="#07c" />
 
-    <Color x:Key="AccentColor">#07c</Color>
-    <SolidColorBrush x:Key="AccentColorBrush" Color="#07c" />
-
-    <SolidColorBrush x:Key="DisabledForeground" Color="#666" />
+    <!--#region Colors -->
 
     <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#07c" />
     <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="#fff" />
 
-    <!--#region Common styles -->
-
-    <SolidColorBrush x:Key="Theme.Popup.BorderBrush" Color="#aaa" />
-    <SolidColorBrush x:Key="Theme.Popup.BackgroundBrush" Color="#f8f8f8" />
-
-    <SolidColorBrush x:Key="Theme.Column.BackgroundBrush" Color="#AFFF" />
-    <SolidColorBrush x:Key="Theme.Column.BorderBrush" Color="#FFE5EBF0" />
-    <SolidColorBrush x:Key="Theme.Column.HeaderForeground" Color="#222" />
-    <SolidColorBrush x:Key="Theme.Column.HeaderBackground" Color="#1555" />
-    <SolidColorBrush x:Key="Theme.Column.HeaderBorderBrush" Color="#2333" />
-
+    <!-- TextBox / ComboBox / Slider -->
+    <SolidColorBrush x:Key="Theme.InputBox.Normal.BackgroundBrush" Color="#FFFFFFFF"/>
     <SolidColorBrush x:Key="Theme.InputBox.Normal.BorderBrush" Color="#FFABABAB"/>
+    <SolidColorBrush x:Key="Theme.InputBox.Normal.ToggleButotn.BackgroundBrush" Color="Transparent"/>
+    <SolidColorBrush x:Key="Theme.InputBox.MouseOver.BackgroundBrush" Color="#FFFFFFFF"/>
     <SolidColorBrush x:Key="Theme.InputBox.MouseOver.BorderBrush" Color="#FF898989"/>
+    <SolidColorBrush x:Key="Theme.InputBox.MouseOver.ToggleButotn.BackgroundBrush" Color="#FFEBF4FC" />
+    <SolidColorBrush x:Key="Theme.InputBox.Pressed.ToggleButotn.BackgroundBrush" Color="#FFDAEBFC" />
+    <SolidColorBrush x:Key="Theme.InputBox.Focus.BackgroundBrush" Color="#FFFFFFFF"/>
     <SolidColorBrush x:Key="Theme.InputBox.Focus.BorderBrush" Color="#07C"/>
     <SolidColorBrush x:Key="Theme.InputBox.Error.BorderBrush" Color="#f33"/>
-    <SolidColorBrush x:Key="Theme.InputBox.Disabled.BorderBrush" Color="#FFD9D9D9" />
-
-    <SolidColorBrush x:Key="Theme.InputBox.Normal.BackgroundBrush" Color="#FFFFFFFF"/>
-    <SolidColorBrush x:Key="Theme.InputBox.MouseOver.BackgroundBrush" Color="#FFFFFFFF"/>
-    <SolidColorBrush x:Key="Theme.InputBox.Focus.BackgroundBrush" Color="#FFFFFFFF"/>
     <SolidColorBrush x:Key="Theme.InputBox.Disabled.BackgroundBrush" Color="#FFF0F0F0" />
-
-    <DropShadowEffect x:Key="Theme.InputBox.Focus.Shadow" ShadowDepth="0" BlurRadius="4" Opacity=".5" Color="#07c" />
-    <DropShadowEffect x:Key="Theme.InputBox.Shadow.Effect" Color="#000000" Direction="270" ShadowDepth="6" BlurRadius="14" Opacity="0.2" />
-    <Thickness x:Key="Theme.InputBox.Shadow.Margin">7,7,7,14</Thickness>
-
-    <SolidColorBrush x:Key="Theme.InputBox.Normal.InnerTheme.Button.BackgroundBrush" Color="Transparent"/>
-    <SolidColorBrush x:Key="Theme.InputBox.MouseOver.InnerTheme.Button.BackgroundBrush" Color="#FFEBF4FC" />
-    <SolidColorBrush x:Key="Theme.InputBox.Pressed.InnerTheme.Button.BackgroundBrush" Color="#FFDAEBFC" />
-    <SolidColorBrush x:Key="Theme.InputBox.Disabled.InnerTheme.Button.BackgroundBrush" Color="Transparent"/>
-
+    <SolidColorBrush x:Key="Theme.InputBox.Disabled.BorderBrush" Color="#FFD9D9D9" />
+    <SolidColorBrush x:Key="Theme.InputBox.Disabled.ToggleButotn.BackgroundBrush" Color="Transparent"/>
     <SolidColorBrush x:Key="Theme.ComboBox.Normal.ArrowBrush" Color="#FF606060"/>
     <SolidColorBrush x:Key="Theme.ComboBox.MouseOver.ArrowBrush" Color="#FF000000"/>
     <SolidColorBrush x:Key="Theme.ComboBox.Pressed.ArrowBrush" Color="#FF0077CC"/>
     <SolidColorBrush x:Key="Theme.ComboBox.Disabled.ArrowBrush" Color="#FFBFBFBF"/>
+
+    <!-- Buttons -->
+    <SolidColorBrush x:Key="Theme.Button.Normal.BackgroundBrush" Color="#FFEEEEEE"/>
+    <SolidColorBrush x:Key="Theme.Button.Normal.BorderBrush" Color="#FFAAAAAA"/>
+    <SolidColorBrush x:Key="Theme.Button.Normal.ForegroundBrush" Color="#FF333333" />
+    <SolidColorBrush x:Key="Theme.Button.MouseOver.BackgroundBrush" Color="#FFE8E8E8"/>
+    <SolidColorBrush x:Key="Theme.Button.MouseOver.BorderBrush" Color="#FFA4A4A4"/>
+    <SolidColorBrush x:Key="Theme.Button.Pressed.BackgroundBrush" Color="#FFBBBBBB"/>
+    <SolidColorBrush x:Key="Theme.Button.Pressed.BorderBrush" Color="#FF777777"/>
+    <SolidColorBrush x:Key="Theme.Button.Disabled.BackgroundBrush" Color="#FFF6F6F6"/>
+    <SolidColorBrush x:Key="Theme.Button.Disabled.BorderBrush" Color="#FFB2B2B2"/>
+    <SolidColorBrush x:Key="Theme.Button.Disabled.ForegroundBrush" Color="#FF969696"/>
+
+    <SolidColorBrush x:Key="Theme.DangerButton.Normal.BackgroundBrush" Color="#FFFF4040"/>
+    <SolidColorBrush x:Key="Theme.DangerButton.Normal.BorderBrush" Color="#FBB8071C"/>
+    <SolidColorBrush x:Key="Theme.DangerButton.Normal.ForegroundBrush" Color="#FFFFFFFF" />
+    <SolidColorBrush x:Key="Theme.DangerButton.MouseOver.BackgroundBrush" Color="#FFF93A3A"/>
+    <SolidColorBrush x:Key="Theme.DangerButton.MouseOver.BorderBrush" Color="#FBB20116"/>
+    <SolidColorBrush x:Key="Theme.DangerButton.Pressed.BackgroundBrush" Color="#FFCC0D0D"/>
+    <SolidColorBrush x:Key="Theme.DangerButton.Pressed.BorderBrush" Color="#FF770000"/>
+    <SolidColorBrush x:Key="Theme.DangerButton.Disabled.BackgroundBrush" Color="#FFFFAAAA"/>
+    <SolidColorBrush x:Key="Theme.DangerButton.Disabled.BorderBrush" Color="#FFFF8888"/>
+    <SolidColorBrush x:Key="Theme.DangerButton.Disabled.ForegroundBrush" Color="#FFFF6666"/>
+
+    <SolidColorBrush x:Key="Theme.PrimaryButton.Normal.BackgroundBrush" Color="#FF0077CC"/>
+    <SolidColorBrush x:Key="Theme.PrimaryButton.Normal.BorderBrush" Color="#FF003388"/>
+    <SolidColorBrush x:Key="Theme.PrimaryButton.Normal.ForegroundBrush" Color="#FFFFFFFF" />
+    <SolidColorBrush x:Key="Theme.PrimaryButton.MouseOver.BackgroundBrush" Color="#FF0071C6"/>
+    <SolidColorBrush x:Key="Theme.PrimaryButton.MouseOver.BorderBrush" Color="#FF002D82"/>
+    <SolidColorBrush x:Key="Theme.PrimaryButton.Pressed.BackgroundBrush" Color="#FF004499"/>
+    <SolidColorBrush x:Key="Theme.PrimaryButton.Pressed.BorderBrush" Color="#FF000055"/>
+    <SolidColorBrush x:Key="Theme.PrimaryButton.Disabled.BackgroundBrush" Color="#FFCCEEFF"/>
+    <SolidColorBrush x:Key="Theme.PrimaryButton.Disabled.BorderBrush" Color="#FF99BBCC"/>
+    <SolidColorBrush x:Key="Theme.PrimaryButton.Disabled.ForegroundBrush" Color="#FF7799BB"/>
+
+    <!-- CheckBox / RadioButton -->
+    <SolidColorBrush x:Key="Theme.CheckMark.Normal.BackgroundBrush" Color="#FFFFFFFF"/>
+    <SolidColorBrush x:Key="Theme.CheckMark.Normal.BorderBrush" Color="#FFAAAAAA"/>
+    <SolidColorBrush x:Key="Theme.CheckMark.Normal.GlyphBrush" Color="#FF0077CC"/>
+    <SolidColorBrush x:Key="Theme.CheckMark.MouseOver.BackgroundBrush" Color="#FFF3F9FF"/>
+    <SolidColorBrush x:Key="Theme.CheckMark.MouseOver.BorderBrush" Color="#FF5593FF"/>
+    <SolidColorBrush x:Key="Theme.CheckMark.MouseOver.GlyphBrush" Color="#FF0077CC"/>
+    <SolidColorBrush x:Key="Theme.CheckMark.Disabled.BackgroundBrush" Color="#FFE6E6E6"/>
+    <SolidColorBrush x:Key="Theme.CheckMark.Disabled.BorderBrush" Color="#FFE0E0E0"/>
+    <SolidColorBrush x:Key="Theme.CheckMark.Disabled.GlyphBrush" Color="#FF707070"/>
+    <SolidColorBrush x:Key="Theme.CheckMark.Pressed.BackgroundBrush" Color="#FFD9ECFF"/>
+    <SolidColorBrush x:Key="Theme.CheckMark.Pressed.BorderBrush" Color="#FF3C77DD"/>
+    <SolidColorBrush x:Key="Theme.CheckMark.Pressed.GlyphBrush" Color="#FF0077CC"/>
+    <SolidColorBrush x:Key="Theme.CheckMark.Checked.BackgroundBrush" Color="#FF0077CC"/>
+    <SolidColorBrush x:Key="Theme.CheckMark.Checked.BorderBrush" Color="#FF0077CC"/>
+    <SolidColorBrush x:Key="Theme.CheckMark.Checked.GlyphBrush" Color="#FFFFFFFF"/>
+    <SolidColorBrush x:Key="Theme.CheckMark.Focused.BorderBrush" Color="#07C"/>
+
+    <!-- ListBox -->
+    <SolidColorBrush x:Key="Theme.ListBox.Normal.BackgroundBrush" Color="#FFFFFFFF"/>
+    <SolidColorBrush x:Key="Theme.ListBox.Normal.BorderBrush" Color="#FFABADB3"/>
+    <SolidColorBrush x:Key="Theme.ListBox.Disabled.BackgroundBrush" Color="#FFFFFFFF"/>
+    <SolidColorBrush x:Key="Theme.ListBox.Disabled.BorderBrush" Color="#FFD9D9D9" />
+    <SolidColorBrush x:Key="Theme.ListBoxItem.MouseOver.BackgroundBrush" Color="#FFF4F4F4"/>
+    <SolidColorBrush x:Key="Theme.ListBoxItem.SelectedInactive.BackgroundBrush" Color="#FFE4E4E4"/>
+    <SolidColorBrush x:Key="Theme.ListBoxItem.SelectedActive.BackgroundBrush" Color="#FFDFDFDF"/>
+    <SolidColorBrush x:Key="Theme.ListBoxItem.BorderBrush" Color="#FFDDDDDD" />
+    <SolidColorBrush x:Key="Theme.ListViewColumn.BackgroundBrush" Color="#AFFF" />
+    <SolidColorBrush x:Key="Theme.ListViewColumn.BorderBrush" Color="#FFE5EBF0" />
+    <SolidColorBrush x:Key="Theme.ListViewColumn.HeaderForeground" Color="#222" />
+    <SolidColorBrush x:Key="Theme.ListViewColumn.HeaderBackground" Color="#1555" />
+    <SolidColorBrush x:Key="Theme.ListViewColumn.HeaderBorderBrush" Color="#2333" />
+
+    <!-- MenuItem -->
+    <SolidColorBrush x:Key="Theme.Menu.BackgroundBrush" Color="#FFF0F0F0"/>
+    <SolidColorBrush x:Key="Theme.Menu.BorderBrush" Color="#FFD7D7D7" />
+    <SolidColorBrush x:Key="Theme.MenuPopup.Popup.Normal.BorderBrush" Color="#AA888888" />
+    <SolidColorBrush x:Key="Theme.MenuPopup.Popup.Normal.BackgroundBrush" Color="#FFFFFFFF" />
+    <SolidColorBrush x:Key="Theme.MenuItem.Normal.BackgroundBrush" Color="Transparent" />
+    <SolidColorBrush x:Key="Theme.MenuItem.Normal.BorderBrush" Color="Transparent" />
+    <SolidColorBrush x:Key="Theme.MenuItem.Normal.ForegroundBrush" Color="#000" />
+    <SolidColorBrush x:Key="Theme.MenuItem.TopLevel.MouseOver.BackgroundBrush" Color="#FFDDDDDD" />
+    <SolidColorBrush x:Key="Theme.MenuItem.Normal.ArrowBrush" Color="#FF444444" />
+    <SolidColorBrush x:Key="Theme.MenuItem.MouseOver.ArrowBrush" Color="sc#1, 0.004391443, 0.002428215, 0.242281124" />
+    <SolidColorBrush x:Key="Theme.MenuItem.MouseOver.BackgroundBrush" Color="#FF0077CC" />
+    <SolidColorBrush x:Key="Theme.MenuItem.MouseOver.BorderBrush" Color="#000" />
+    <SolidColorBrush x:Key="Theme.MenuItem.MouseOver.ForegroundBrush" Color="#FFFFFFFF" />
+    <SolidColorBrush x:Key="Theme.MenuItem.Disabled.ForegroundBrush" Color="#FF888888" />
+    <SolidColorBrush x:Key="Theme.MenuItem.Separator.Normal.BackgroundBrush" Color="#FFC0C0C0" />
+
+    <!-- Popup -->
+    <SolidColorBrush x:Key="Theme.Popup.BackgroundBrush" Color="#f8f8f8" />
+    <SolidColorBrush x:Key="Theme.Popup.BorderBrush" Color="#aaa" />
+
+    <!-- Slider -->
+    <SolidColorBrush x:Key="Theme.Slider.Thumb.Normal.ForegroundBrush" Color="#FFE5E5E5"/>
+    <SolidColorBrush x:Key="Theme.Slider.Thumb.MouseOver.BackgroundBrush" Color="#FFDCECFC"/>
+    <SolidColorBrush x:Key="Theme.Slider.Thumb.MouseOver.BorderBrush" Color="#FF7Eb4EA"/>
+    <SolidColorBrush x:Key="Theme.Slider.Thumb.Pressed.BackgroundBrush" Color="#FFDAECFC"/>
+    <SolidColorBrush x:Key="Theme.Slider.Thumb.Pressed.BorderBrush" Color="#FF0077CC"/>
+    <SolidColorBrush x:Key="Theme.Slider.Thumb.Disabled.BackgroundBrush" Color="#FFF0F0F0"/>
+    <SolidColorBrush x:Key="Theme.Slider.Thumb.Disabled.BorderBrush" Color="#FFD9D9D9"/>
+    <SolidColorBrush x:Key="Theme.Slider.Thumb.Normal.BackgroundBrush" Color="#FFF0F0F0"/>
+    <SolidColorBrush x:Key="Theme.Slider.Thumb.Normal.BorderBrush" Color="#FFACACAC"/>
+    <SolidColorBrush x:Key="Theme.Slider.Track.BorderBrush" Color="#FFD6D6D6"/>
+    <SolidColorBrush x:Key="Theme.Slider.Track.BackgroundBrush" Color="#FFE7EAEA"/>
+
+    <!-- TabControl -->
+    <SolidColorBrush x:Key="Theme.TabControl.Normal.BackgroundBrush" Color="#FFFFFFFF" />
+    <SolidColorBrush x:Key="Theme.TabControl.Normal.BorderBrush" Color="#FFCCCCCC" />
+    <SolidColorBrush x:Key="Theme.TabPanel.Normal.BackgroundBrush" Color="#FFEEEEEE" />
+    <SolidColorBrush x:Key="Theme.TabItem.Normal.BackgroundBrush" Color="#FFF4F4F4" />
+    <SolidColorBrush x:Key="Theme.TabItem.Normal.ForegroundBrush" Color="#FF000000" />
+    <SolidColorBrush x:Key="Theme.TabItem.Normal.BorderBrush" Color="#FFCCCCCC" />
+    <SolidColorBrush x:Key="Theme.TabItem.MouseOver.BackgroundBrush" Color="#FFFAFAFA" />
+    <SolidColorBrush x:Key="Theme.TabItem.Selected.BackgroundBrush" Color="#FFFFFFFF" />
+    <SolidColorBrush x:Key="Theme.TabItem.Selected.ForegroundBrush" Color="#FF666666" />
+    <SolidColorBrush x:Key="Theme.TabItem.Disabled.BackgroundBrush" Color="#FFFFFFFF" />
+    <SolidColorBrush x:Key="Theme.TabItem.Disabled.ForegroundBrush" Color="#FF666666" />
+
+    <!-- ToolBar -->
+    <SolidColorBrush x:Key="Theme.ToolBar.Normal.BackgroundBrush" Color="#FFF8F8F8"/>
+    <SolidColorBrush x:Key="Theme.ToolBar.Normal.BorderBrush" Color="#FFDADADA" />
+    <SolidColorBrush x:Key="Theme.ToolBar.Normal.ForegroundBrush" Color="#FF444444" />
+    <SolidColorBrush x:Key="Theme.ToolBar.Gripper.FillBrush" Color="#FFAAAAAA"/>
+    <SolidColorBrush x:Key="Theme.ToolBarOverflow.Normal.BorderBrush" Color="#FFB6BDC5"/>
+    <SolidColorBrush x:Key="Theme.ToolBarOverflow.Normal.BackgroundBrush" Color="#FFFFFFFF"/>
+    <SolidColorBrush x:Key="Theme.ToolBarButton.MouseOver.BorderBrush" Color="#FFAAAAAA"/>
+    <SolidColorBrush x:Key="Theme.ToolBarButton.MouseOver.BackgroundBrush" Color="#FFDDDDDD"/>
+    <SolidColorBrush x:Key="Theme.ToolBarButton.Pressed.BorderBrush" Color="#FF909090"/>
+    <SolidColorBrush x:Key="Theme.ToolBarButton.Pressed.BackgroundBrush" Color="#FFC0C0C0"/>
+    <SolidColorBrush x:Key="Theme.ToolBarButton.Checked.BackgroundBrush" Color="#FFC0C0C0"/>
+    <SolidColorBrush x:Key="Theme.ToolBarToggleButton.Normal.BackgroundBrush" Color="#FFD7D7D7"/>
+    <SolidColorBrush x:Key="Theme.ToolBarToggleButton.MouseOver.BackgroundBrush" Color="#FFC0C0C0"/>
+
+    <!-- Window -->
+    <SolidColorBrush x:Key="Theme.Window.Active.BorderBrush" Color="#FF0077CC" />
+    <SolidColorBrush x:Key="Theme.Window.Inactive.BorderBrush" Color="#FFDDDDDD" />
+    <SolidColorBrush x:Key="Theme.WindowTitleBar.Active.BackgroundBrush" Color="#FFDADADA" />
+    <SolidColorBrush x:Key="Theme.WindowTitleBar.Inactive.BackgroundBrush" Color="#FFF8F8F8"/>
+    <SolidColorBrush x:Key="Theme.WindowTitleBar.Active.ForegroundBrush" Color="#FF222222" />
+    <SolidColorBrush x:Key="Theme.WindowTitleBar.Inactive.ForegroundBrush" Color="#FF666666" />
+
+    <!--#endregion Colors -->
+
+    <!--#endregion Common -->
+
+    <PopupAnimation x:Key="{x:Static SystemParameters.MenuPopupAnimationKey}">None</PopupAnimation>
 
     <Style x:Key="FocusVisual">
         <Setter Property="Control.Template">
@@ -64,23 +186,34 @@
         </Setter>
     </Style>
 
-    <!--#endregion Common styles -->
+    <Style x:Key="OptionMarkFocusVisual">
+        <Setter Property="Control.Padding" Value="0" />
+        <Setter Property="Control.Margin" Value="0" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle
+                        Margin="0, 0, 0, 0"
+                        SnapsToDevicePixels="True"
+                        Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"
+                        StrokeThickness="1"
+                        StrokeDashArray="1, 2"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
-    <!--#region Window style -->
+    <Geometry x:Key="Theme.CheckMark.Geometry">F1 M 9.97498,1.22334L 4.6983,9.09834L 4.52164,9.09834L 0,5.19331L 1.27664,3.52165L 4.255,6.08833L 8.33331,1.52588e-005L 9.97498,1.22334 Z</Geometry>
+    <Geometry x:Key="Theme.MenuPopup.UpArrow.Geometry">M 0,0 6,0 3,-3 z</Geometry>
+    <Geometry x:Key="Theme.MenuPopup.DownArrow.Geometry">M 0,0 6,0 3,3 z</Geometry>
 
-    <SolidColorBrush x:Key="Window.TitleBar.Active.BackgroundBrush" Color="#FFDADADA" />
-    <SolidColorBrush x:Key="Window.TitleBar.Inactive.BackgroundBrush" Color="#FFF8F8F8"/>
-    <SolidColorBrush x:Key="Window.Active.BorderBrush" Color="#FF0077CC" />
-    <SolidColorBrush x:Key="Window.Inactive.BorderBrush" Color="#FFDDDDDD" />
-    <SolidColorBrush x:Key="Window.TitleBar.Active.ForegroundBrush" Color="#FF222222" />
-    <SolidColorBrush x:Key="Window.TitleBar.Inactive.ForegroundBrush" Color="#FF666666" />
+    <DropShadowEffect x:Key="Theme.InputBox.Focus.ShadowEffect" ShadowDepth="0" BlurRadius="4" Opacity=".5" Color="#07c" />
+    <DropShadowEffect x:Key="Theme.InputBox.Normal.ShadowEffect" Color="#000000" Direction="270" ShadowDepth="6" BlurRadius="14" Opacity="0.2" />
+    <Thickness x:Key="Theme.InputBox.Shadow.Margin">7,7,7,14</Thickness>
 
-    <!--#endregion-->
+    <!--#endregion Common -->
 
     <!--#region Menu style -->
-
-    <SolidColorBrush x:Key="Theme.Menu.BackgroundBrush" Color="#FFF0F0F0"/>
-    <SolidColorBrush x:Key="Theme.Menu.BorderBrush" Color="#FFD7D7D7" />
 
     <Style TargetType="{x:Type Menu}">
         <Setter Property="Background" Value="{StaticResource Theme.Menu.BackgroundBrush}"/>
@@ -105,9 +238,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-
-    <Geometry x:Key="Theme.Menu.UpArrow.Geometry">M 0,0 6,0 3,-3 z</Geometry>
-    <Geometry x:Key="Theme.Menu.DownArrow.Geometry">M 0,0 6,0 3,3 z</Geometry>
 
     <Style x:Key="MenuScrollButton" TargetType="{x:Type RepeatButton}">
         <Setter Property="Padding" Value="4" />
@@ -141,25 +271,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-
-    <SolidColorBrush x:Key="Theme.MenuPopup.Popup.Normal.BackgroundBrush" Color="#FFFFFFFF" />
-    <SolidColorBrush x:Key="Theme.MenuPopup.Popup.Normal.BorderBrush" Color="#AA888888" />
-
-    <SolidColorBrush x:Key="Theme.MenuItem.Normal.BackgroundBrush" Color="Transparent" />
-    <SolidColorBrush x:Key="Theme.MenuItem.Normal.BorderBrush" Color="Transparent" />
-    <SolidColorBrush x:Key="Theme.MenuItem.Normal.ForegroundBrush" Color="#000" />
-
-    <SolidColorBrush x:Key="Theme.MenuItem.TopLevel.Hover.BackgroundBrush" Color="#FFDDDDDD" />
-    <SolidColorBrush x:Key="Theme.MenuItem.Hover.BackgroundBrush" Color="#FF0077CC" />
-    <SolidColorBrush x:Key="Theme.MenuItem.Hover.BorderBrush" Color="#000" />
-    <SolidColorBrush x:Key="Theme.MenuItem.Hover.ForegroundBrush" Color="#FFFFFFFF" />
-
-    <SolidColorBrush x:Key="Theme.MenuItem.Disabled.ForegroundBrush" Color="#FF888888" />
-
-    <SolidColorBrush x:Key="Theme.MenuItem.Normal.ArrowBrush" Color="#FF444444" />
-    <SolidColorBrush x:Key="Theme.MenuItem.MouseOver.ArrowBrush" Color="sc#1, 0.004391443, 0.002428215, 0.242281124" />
-
-    <SolidColorBrush x:Key="Theme.Menu.Separator.Normal.BackgroundBrush" Color="#FFC0C0C0" />
 
     <MenuScrollingVisibilityConverter x:Key="MenuScrollingVisibilityConverter" />
 
@@ -197,7 +308,7 @@
                             </RepeatButton.Visibility>
                             <Path
                                 Fill="{DynamicResource {x:Static SystemColors.MenuTextBrushKey}}"
-                                Data="{StaticResource Theme.Menu.UpArrow.Geometry}" />
+                                Data="{StaticResource Theme.MenuPopup.UpArrow.Geometry}" />
                         </RepeatButton>
                         <RepeatButton
                             Style="{StaticResource MenuScrollButton}"
@@ -217,7 +328,7 @@
                             </RepeatButton.Visibility>
                             <Path
                                 Fill="{DynamicResource {x:Static SystemColors.MenuTextBrushKey}}"
-                                Data="{StaticResource Theme.Menu.DownArrow.Geometry}" />
+                                Data="{StaticResource Theme.MenuPopup.DownArrow.Geometry}" />
                         </RepeatButton>
                     </Grid>
                 </ControlTemplate>
@@ -233,7 +344,7 @@
                 <ControlTemplate TargetType="{x:Type Separator}">
                     <Border
                         BorderThickness="1"
-                        BorderBrush="{StaticResource Theme.Menu.Separator.Normal.BackgroundBrush}" />
+                        BorderBrush="{StaticResource Theme.MenuItem.Separator.Normal.BackgroundBrush}" />
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -262,7 +373,7 @@
                         Fill="{StaticResource Theme.MenuPopup.Popup.Normal.BackgroundBrush}"
                         Stroke="{StaticResource Theme.MenuPopup.Popup.Normal.BorderBrush}"
                         StrokeThickness="1" RadiusX="4" RadiusY="4"
-                        Effect="{StaticResource Theme.InputBox.Shadow.Effect}" />
+                        Effect="{StaticResource Theme.InputBox.Normal.ShadowEffect}" />
                     <ScrollViewer
                         Margin="4"
                         CanContentScroll="True"
@@ -280,7 +391,7 @@
                 <Setter TargetName="Popup" Property="PopupAnimation" Value="None" />
             </Trigger>
             <Trigger Property="IsHighlighted" Value="True">
-                <Setter Property="Background" TargetName="Border" Value="{StaticResource Theme.MenuItem.TopLevel.Hover.BackgroundBrush}" />
+                <Setter Property="Background" TargetName="Border" Value="{StaticResource Theme.MenuItem.TopLevel.MouseOver.BackgroundBrush}" />
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="Foreground" Value="{StaticResource Theme.MenuItem.Disabled.ForegroundBrush}" />
@@ -300,7 +411,7 @@
         </Border>
         <ControlTemplate.Triggers>
             <Trigger Property="IsHighlighted" Value="True">
-                <Setter Property="Background" TargetName="Border" Value="{StaticResource Theme.MenuItem.TopLevel.Hover.BackgroundBrush}" />
+                <Setter Property="Background" TargetName="Border" Value="{StaticResource Theme.MenuItem.TopLevel.MouseOver.BackgroundBrush}" />
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="Foreground" Value="{StaticResource Theme.MenuItem.Disabled.ForegroundBrush}" />
@@ -340,7 +451,7 @@
                         SnapsToDevicePixels="False"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
-                        Fill="{StaticResource Theme.MenuItem.Hover.ForegroundBrush}"
+                        Fill="{StaticResource Theme.MenuItem.MouseOver.ForegroundBrush}"
                         Data="F1 M 9.97498,1.22334L 4.6983,9.09834L 4.52164,9.09834L 0,5.19331L 1.27664,3.52165L 4.255,6.08833L 8.33331,1.52588e-005L 9.97498,1.22334 Z" />
                 </Border>
                 <ContentPresenter
@@ -377,10 +488,10 @@
                 <Setter TargetName="CheckMark" Property="Visibility" Value="Visible" />
             </Trigger>
             <Trigger Property="IsHighlighted" Value="True">
-                <Setter Property="Background" TargetName="Border" Value="{StaticResource Theme.MenuItem.Hover.BackgroundBrush}" />
-                <Setter Property="TextElement.Foreground" TargetName="Border" Value="{StaticResource Theme.MenuItem.Hover.ForegroundBrush}" />
+                <Setter Property="Background" TargetName="Border" Value="{StaticResource Theme.MenuItem.MouseOver.BackgroundBrush}" />
+                <Setter Property="TextElement.Foreground" TargetName="Border" Value="{StaticResource Theme.MenuItem.MouseOver.ForegroundBrush}" />
                 <Setter Property="Background" TargetName="CheckMark" Value="#FFFFFFFF" />
-                <Setter Property="Fill" TargetName="CheckMarkPath" Value="{StaticResource Theme.MenuItem.Hover.BackgroundBrush}" />
+                <Setter Property="Fill" TargetName="CheckMarkPath" Value="{StaticResource Theme.MenuItem.MouseOver.BackgroundBrush}" />
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="Foreground" Value="{StaticResource Theme.MenuItem.Disabled.ForegroundBrush}" />
@@ -448,7 +559,7 @@
                             Fill="{StaticResource Theme.MenuPopup.Popup.Normal.BackgroundBrush}"
                             Stroke="{StaticResource Theme.MenuPopup.Popup.Normal.BorderBrush}"
                             StrokeThickness="1" RadiusX="4" RadiusY="4"
-                            Effect="{StaticResource Theme.InputBox.Shadow.Effect}"/>
+                            Effect="{StaticResource Theme.InputBox.Normal.ShadowEffect}"/>
 
                         <ScrollViewer
                             Margin="4" CanContentScroll="True"
@@ -467,8 +578,8 @@
                 <Setter TargetName="Icon" Property="Visibility" Value="Collapsed" />
             </Trigger>
             <Trigger Property="IsHighlighted" Value="True">
-                <Setter Property="Background" TargetName="Border" Value="{StaticResource Theme.MenuItem.Hover.BackgroundBrush}" />
-                <Setter Property="TextElement.Foreground" TargetName="Border" Value="{StaticResource Theme.MenuItem.Hover.ForegroundBrush}" />
+                <Setter Property="Background" TargetName="Border" Value="{StaticResource Theme.MenuItem.MouseOver.BackgroundBrush}" />
+                <Setter Property="TextElement.Foreground" TargetName="Border" Value="{StaticResource Theme.MenuItem.MouseOver.ForegroundBrush}" />
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="Foreground" Value="{StaticResource Theme.MenuItem.Disabled.ForegroundBrush}">
@@ -502,8 +613,6 @@
 
     <!--#region ContextMenu style -->
 
-    <PopupAnimation x:Key="{x:Static SystemParameters.MenuPopupAnimationKey}">None</PopupAnimation>
-
     <Style x:Key="{x:Type ContextMenu}" TargetType="{x:Type ContextMenu}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="OverridesDefaultStyle" Value="True" />
@@ -531,7 +640,7 @@
                             Fill="{StaticResource Theme.MenuPopup.Popup.Normal.BackgroundBrush}"
                             Stroke="{StaticResource Theme.MenuPopup.Popup.Normal.BorderBrush}"
                             StrokeThickness="1" RadiusX="4" RadiusY="4"
-                            Effect="{StaticResource Theme.InputBox.Shadow.Effect}" />
+                            Effect="{StaticResource Theme.InputBox.Normal.ShadowEffect}" />
                         <ScrollViewer
                             Margin="4" CanContentScroll="True"
                             Style="{StaticResource MenuScrollViewer}">
@@ -694,7 +803,7 @@
                             </MultiDataTrigger.Conditions>
                             <Setter Property="Background" TargetName="templateRoot" Value="{StaticResource Theme.InputBox.Normal.BackgroundBrush}"/>
                             <Setter Property="BorderBrush" TargetName="templateRoot" Value="{StaticResource Theme.InputBox.Normal.BorderBrush}"/>
-                            <Setter Property="Background" TargetName="splitBorder" Value="{StaticResource Theme.InputBox.Normal.InnerTheme.Button.BackgroundBrush}"/>
+                            <Setter Property="Background" TargetName="splitBorder" Value="{StaticResource Theme.InputBox.Normal.ToggleButotn.BackgroundBrush}"/>
                         </MultiDataTrigger>
 
                         <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource AncestorType={x:Type ComboBox}}}" Value="True">
@@ -709,7 +818,7 @@
                                 <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource AncestorType={x:Type ComboBox}}}" Value="True"/>
                                 <Condition Binding="{Binding IsEditable, RelativeSource={RelativeSource AncestorType={x:Type ComboBox}}}" Value="True"/>
                             </MultiDataTrigger.Conditions>
-                            <Setter Property="Background" TargetName="splitBorder" Value="{StaticResource Theme.InputBox.MouseOver.InnerTheme.Button.BackgroundBrush}"/>
+                            <Setter Property="Background" TargetName="splitBorder" Value="{StaticResource Theme.InputBox.MouseOver.ToggleButotn.BackgroundBrush}"/>
                         </MultiDataTrigger>
 
                         <DataTrigger Binding="{Binding IsKeyboardFocusWithin, RelativeSource={RelativeSource AncestorType={x:Type ComboBox}}}"  Value="True">
@@ -724,7 +833,7 @@
                                 <Condition Binding="{Binding IsKeyboardFocusWithin, RelativeSource={RelativeSource AncestorType={x:Type ComboBox}}}" Value="True"/>
                                 <Condition Binding="{Binding IsEditable, RelativeSource={RelativeSource AncestorType={x:Type ComboBox}}}" Value="True"/>
                             </MultiDataTrigger.Conditions>
-                            <Setter Property="Background" TargetName="splitBorder" Value="{StaticResource Theme.InputBox.Pressed.InnerTheme.Button.BackgroundBrush}" />
+                            <Setter Property="Background" TargetName="splitBorder" Value="{StaticResource Theme.InputBox.Pressed.ToggleButotn.BackgroundBrush}" />
                         </MultiDataTrigger>
 
                         <DataTrigger Binding="{Binding IsEnabled, RelativeSource={RelativeSource AncestorType={x:Type ComboBox}}}" Value="False">
@@ -737,7 +846,7 @@
                                 <Condition Binding="{Binding IsEnabled, RelativeSource={RelativeSource AncestorType={x:Type ComboBox}}}" Value="False" />
                                 <Condition Binding="{Binding IsEditable, RelativeSource={RelativeSource AncestorType={x:Type ComboBox}}}" Value="True" />
                             </MultiDataTrigger.Conditions>
-                            <Setter Property="Background" TargetName="splitBorder" Value="{StaticResource Theme.InputBox.Disabled.InnerTheme.Button.BackgroundBrush}" />
+                            <Setter Property="Background" TargetName="splitBorder" Value="{StaticResource Theme.InputBox.Disabled.ToggleButotn.BackgroundBrush}" />
                         </MultiDataTrigger>
                         <Trigger Property="IsKeyboardFocused" Value="True">
                             <Setter TargetName="templateRoot" Property="BorderBrush" Value="{StaticResource Theme.InputBox.Focus.BorderBrush}"/>
@@ -822,7 +931,7 @@
         <ControlTemplate.Triggers>
             <Trigger Property="HasDropShadow" SourceName="PART_Popup" Value="True">
                 <Setter TargetName="shadow" Property="Margin" Value="{StaticResource Theme.InputBox.Shadow.Margin}"/>
-                <Setter TargetName="shadow" Property="Effect" Value="{StaticResource Theme.InputBox.Shadow.Effect}"/>
+                <Setter TargetName="shadow" Property="Effect" Value="{StaticResource Theme.InputBox.Normal.ShadowEffect}"/>
             </Trigger>
             <Trigger Property="HasItems" Value="False">
                 <Setter Property="Height" TargetName="dropDownBorder" Value="95"/>
@@ -840,8 +949,6 @@
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
-
-    <SolidColorBrush x:Key="Theme.TextBox.Normal.BackgroundBrush" Color="#FFFFFFFF"/>
 
     <Style x:Key="ComboBoxEditableTextBox" TargetType="{x:Type TextBox}">
         <Setter Property="OverridesDefaultStyle" Value="True"/>
@@ -911,7 +1018,7 @@
             <Border
                 x:Name="border"
                 CornerRadius="1"
-                Background="{StaticResource Theme.TextBox.Normal.BackgroundBrush}"
+                Background="{StaticResource Theme.InputBox.Normal.BackgroundBrush}"
                 Margin="{TemplateBinding BorderThickness}">
                 <TextBox
                     x:Name="PART_EditableTextBox"
@@ -925,7 +1032,7 @@
         <ControlTemplate.Triggers>
             <Trigger Property="HasDropShadow" SourceName="PART_Popup" Value="True">
                 <Setter TargetName="shadow" Property="Margin" Value="{StaticResource Theme.InputBox.Shadow.Margin}"/>
-                <Setter TargetName="shadow" Property="Effect" Value="{StaticResource Theme.InputBox.Shadow.Effect}"/>
+                <Setter TargetName="shadow" Property="Effect" Value="{StaticResource Theme.InputBox.Normal.ShadowEffect}"/>
             </Trigger>
             <Trigger Property="HasItems" Value="False">
                 <Setter Property="Height" TargetName="dropDownBorder" Value="95"/>
@@ -979,10 +1086,10 @@
 
     <!--#region HeaderedContentControl style -->
 
-    <SolidColorBrush x:Key="HeaderedContent.HeaderLabel.Normal.ForegroundBrush">#444444</SolidColorBrush>
-    <SolidColorBrush x:Key="HeaderedContent.HeaderLabel.Focus.ForegroundBrush">#0077CC</SolidColorBrush>
+    <SolidColorBrush x:Key="Theme.HeaderedContent.HeaderLabel.Normal.ForegroundBrush">#444444</SolidColorBrush>
+    <SolidColorBrush x:Key="Theme.HeaderedContent.HeaderLabel.Focus.ForegroundBrush">#0077CC</SolidColorBrush>
 
-    <Style TargetType="{x:Type HeaderedContentControl}">
+    <Style x:Key="HedaderedContentStyle" TargetType="{x:Type HeaderedContentControl}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="Focusable" Value="False" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
@@ -990,10 +1097,10 @@
         <Setter Property="HeaderTemplate">
             <Setter.Value>
                 <DataTemplate>
-                    <Label x:Name="label" FontWeight="Bold" Foreground="{StaticResource HeaderedContent.HeaderLabel.Normal.ForegroundBrush}" Content="{Binding}" Padding="0" Margin="0 0 0 6" />
+                    <Label x:Name="label" FontWeight="Bold" Foreground="{StaticResource Theme.HeaderedContent.HeaderLabel.Normal.ForegroundBrush}" Content="{Binding}" Padding="0" Margin="0 0 0 6" />
                     <DataTemplate.Triggers>
                         <DataTrigger Binding="{Binding IsKeyboardFocusWithin, RelativeSource={RelativeSource AncestorType={x:Type HeaderedContentControl}}}" Value="True">
-                            <Setter TargetName="label" Property="Foreground" Value="{StaticResource HeaderedContent.HeaderLabel.Focus.ForegroundBrush}" />
+                            <Setter TargetName="label" Property="Foreground" Value="{StaticResource Theme.HeaderedContent.HeaderLabel.Focus.ForegroundBrush}" />
                         </DataTrigger>
                     </DataTemplate.Triggers>
                 </DataTemplate>
@@ -1023,17 +1130,6 @@
     <!--#endregion HeaderedContentControl style -->
 
     <!--#region Butotn styles -->
-
-    <SolidColorBrush x:Key="Theme.Button.Normal.BackgroundBrush" Color="#FFEEEEEE"/>
-    <SolidColorBrush x:Key="Theme.Button.Normal.BorderBrush" Color="#FFAAAAAA"/>
-    <SolidColorBrush x:Key="Theme.Button.Normal.ForegroundBrush" Color="#FF333333" />
-    <SolidColorBrush x:Key="Theme.Button.MouseOver.BackgroundBrush" Color="#FFE8E8E8"/>
-    <SolidColorBrush x:Key="Theme.Button.MouseOver.BorderBrush" Color="#FFA4A4A4"/>
-    <SolidColorBrush x:Key="Theme.Button.Pressed.BackgroundBrush" Color="#FFBBBBBB"/>
-    <SolidColorBrush x:Key="Theme.Button.Pressed.BorderBrush" Color="#FF777777"/>
-    <SolidColorBrush x:Key="Theme.Button.Disabled.BackgroundBrush" Color="#FFF6F6F6"/>
-    <SolidColorBrush x:Key="Theme.Button.Disabled.BorderBrush" Color="#FFB2B2B2"/>
-    <SolidColorBrush x:Key="Theme.Button.Disabled.ForegroundBrush" Color="#FF969696"/>
 
     <Style x:Key="ButtonBaseStyle" TargetType="{x:Type ButtonBase}">
         <Setter Property="Padding" Value="6 4"/>
@@ -1082,17 +1178,6 @@
         </Setter>
     </Style>
 
-    <SolidColorBrush x:Key="Theme.DangerButton.Normal.BackgroundBrush" Color="#FFFF4040"/>
-    <SolidColorBrush x:Key="Theme.DangerButton.Normal.BorderBrush" Color="#FBB8071C"/>
-    <SolidColorBrush x:Key="Theme.DangerButton.Normal.ForegroundBrush" Color="#FFFFFFFF" />
-    <SolidColorBrush x:Key="Theme.DangerButton.MouseOver.BackgroundBrush" Color="#FFF93A3A"/>
-    <SolidColorBrush x:Key="Theme.DangerButton.MouseOver.BorderBrush" Color="#FBB20116"/>
-    <SolidColorBrush x:Key="Theme.DangerButton.Pressed.BackgroundBrush" Color="#FFCC0D0D"/>
-    <SolidColorBrush x:Key="Theme.DangerButton.Pressed.BorderBrush" Color="#FF770000"/>
-    <SolidColorBrush x:Key="Theme.DangerButton.Disabled.BackgroundBrush" Color="#FFFFAAAA"/>
-    <SolidColorBrush x:Key="Theme.DangerButton.Disabled.BorderBrush" Color="#FFFF8888"/>
-    <SolidColorBrush x:Key="Theme.DangerButton.Disabled.ForegroundBrush" Color="#FFFF6666"/>
-
     <Style x:Key="DangerButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonBaseStyle}">
         <Setter Property="Background" Value="{StaticResource Theme.DangerButton.Normal.BackgroundBrush}"/>
         <Setter Property="BorderBrush" Value="{StaticResource Theme.DangerButton.Normal.BorderBrush}"/>
@@ -1131,17 +1216,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-
-    <SolidColorBrush x:Key="Theme.PrimaryButton.Normal.BackgroundBrush" Color="#FF0077CC"/>
-    <SolidColorBrush x:Key="Theme.PrimaryButton.Normal.BorderBrush" Color="#FF003388"/>
-    <SolidColorBrush x:Key="Theme.PrimaryButton.Normal.ForegroundBrush" Color="#FFFFFFFF" />
-    <SolidColorBrush x:Key="Theme.PrimaryButton.MouseOver.BackgroundBrush" Color="#FF0071C6"/>
-    <SolidColorBrush x:Key="Theme.PrimaryButton.MouseOver.BorderBrush" Color="#FF002D82"/>
-    <SolidColorBrush x:Key="Theme.PrimaryButton.Pressed.BackgroundBrush" Color="#FF004499"/>
-    <SolidColorBrush x:Key="Theme.PrimaryButton.Pressed.BorderBrush" Color="#FF000055"/>
-    <SolidColorBrush x:Key="Theme.PrimaryButton.Disabled.BackgroundBrush" Color="#FFCCEEFF"/>
-    <SolidColorBrush x:Key="Theme.PrimaryButton.Disabled.BorderBrush" Color="#FF99BBCC"/>
-    <SolidColorBrush x:Key="Theme.PrimaryButton.Disabled.ForegroundBrush" Color="#FF7799BB"/>
 
     <Style x:Key="PrimaryButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonBaseStyle}">
         <Setter Property="Background" Value="{StaticResource Theme.PrimaryButton.Normal.BackgroundBrush}"/>
@@ -1186,41 +1260,6 @@
 
     <!--#region CheckBox style -->
 
-    <Style x:Key="OptionMarkFocusVisual">
-        <Setter Property="Control.Padding" Value="0" />
-        <Setter Property="Control.Margin" Value="0" />
-        <Setter Property="Control.Template">
-            <Setter.Value>
-                <ControlTemplate>
-                    <Rectangle
-                        Margin="0, 0, 0, 0"
-                        SnapsToDevicePixels="True"
-                        Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"
-                        StrokeThickness="1"
-                        StrokeDashArray="1, 2"/>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-
-    <SolidColorBrush x:Key="Theme.CheckMark.Normal.BackgroundBrush" Color="#FFFFFFFF"/>
-    <SolidColorBrush x:Key="Theme.CheckMark.Normal.BorderBrush" Color="#FFAAAAAA"/>
-    <SolidColorBrush x:Key="Theme.CheckMark.Normal.GlyphBrush" Color="#FF0077CC"/>
-    <SolidColorBrush x:Key="Theme.CheckMark.MouseOver.BackgroundBrush" Color="#FFF3F9FF"/>
-    <SolidColorBrush x:Key="Theme.CheckMark.MouseOver.BorderBrush" Color="#FF5593FF"/>
-    <SolidColorBrush x:Key="Theme.CheckMark.MouseOver.GlyphBrush" Color="#FF0077CC"/>
-    <SolidColorBrush x:Key="Theme.CheckMark.Disabled.BackgroundBrush" Color="#FFE6E6E6"/>
-    <SolidColorBrush x:Key="Theme.CheckMark.Disabled.BorderBrush" Color="#FFE0E0E0"/>
-    <SolidColorBrush x:Key="Theme.CheckMark.Disabled.GlyphBrush" Color="#FF707070"/>
-    <SolidColorBrush x:Key="Theme.CheckMark.Pressed.BackgroundBrush" Color="#FFD9ECFF"/>
-    <SolidColorBrush x:Key="Theme.CheckMark.Pressed.BorderBrush" Color="#FF3C77DD"/>
-    <SolidColorBrush x:Key="Theme.CheckMark.Pressed.GlyphBrush" Color="#FF0077CC"/>
-    <SolidColorBrush x:Key="Theme.CheckMark.Checked.BackgroundBrush" Color="#FF0077CC"/>
-    <SolidColorBrush x:Key="Theme.CheckMark.Checked.BorderBrush" Color="#FF0077CC"/>
-    <SolidColorBrush x:Key="Theme.CheckMark.Checked.GlyphBrush" Color="#FFFFFFFF"/>
-    <SolidColorBrush x:Key="Theme.CheckMark.Focus.BorderBrush" Color="#07C"/>
-    <Geometry x:Key="Theme.CheckMark.GlyphGeometry">F1 M 9.97498,1.22334L 4.6983,9.09834L 4.52164,9.09834L 0,5.19331L 1.27664,3.52165L 4.255,6.08833L 8.33331,1.52588e-005L 9.97498,1.22334 Z</Geometry>
-
     <Style TargetType="{x:Type CheckBox}">
         <Setter Property="Margin" Value="0, 1" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource OptionMarkFocusVisual}"/>
@@ -1258,7 +1297,7 @@
                             Fill="{StaticResource Theme.CheckMark.Normal.GlyphBrush}"
                             VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                             HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                            Data="{StaticResource Theme.CheckMark.GlyphGeometry}" />
+                            Data="{StaticResource Theme.CheckMark.Geometry}" />
                         <Rectangle
                             x:Name="indeterminateMark"
                             Margin="4"
@@ -1282,7 +1321,7 @@
                             <Setter Property="Padding" Value="4 0 0 0"/>
                         </Trigger>
                         <Trigger Property="IsFocused" Value="True">
-                            <Setter TargetName="checkBoxBorder" Property="Stroke" Value="{StaticResource Theme.CheckMark.Focus.BorderBrush}"/>
+                            <Setter TargetName="checkBoxBorder" Property="Stroke" Value="{StaticResource Theme.CheckMark.Focused.BorderBrush}"/>
                         </Trigger>
                         <Trigger Property="IsChecked" Value="True">
                             <Setter TargetName="optionMark" Property="Visibility" Value="Visible"/>
@@ -1391,7 +1430,7 @@
                             <Setter Property="Padding" Value="4 0 0 0"/>
                         </Trigger>
                         <Trigger Property="IsFocused" Value="True">
-                            <Setter TargetName="radioButtonBorder" Property="Stroke" Value="{StaticResource Theme.CheckMark.Focus.BorderBrush}"/>
+                            <Setter TargetName="radioButtonBorder" Property="Stroke" Value="{StaticResource Theme.CheckMark.Focused.BorderBrush}"/>
                         </Trigger>
                         <Trigger Property="IsChecked" Value="True">
                             <Setter TargetName="optionMark" Property="Opacity" Value="1"/>
@@ -1444,19 +1483,6 @@
 
     <!--#region Slider style-->
 
-    <SolidColorBrush x:Key="Theme.Slider.Thumb.Normal.ForegroundBrush" Color="#FFE5E5E5"/>
-    <SolidColorBrush x:Key="Theme.Slider.Thumb.MouseOver.BackgroundBrush" Color="#FFDCECFC"/>
-    <SolidColorBrush x:Key="Theme.Slider.Thumb.MouseOver.BorderBrush" Color="#FF7Eb4EA"/>
-    <SolidColorBrush x:Key="Theme.Slider.Thumb.Pressed.BackgroundBrush" Color="#FFDAECFC"/>
-    <SolidColorBrush x:Key="Theme.Slider.Thumb.Pressed.BorderBrush" Color="#FF0077CC"/>
-    <SolidColorBrush x:Key="Theme.Slider.Thumb.Disabled.BackgroundBrush" Color="#FFF0F0F0"/>
-    <SolidColorBrush x:Key="Theme.Slider.Thumb.Disabled.BorderBrush" Color="#FFD9D9D9"/>
-    <SolidColorBrush x:Key="Theme.Slider.Thumb.Normal.BackgroundBrush" Color="#FFF0F0F0"/>
-    <SolidColorBrush x:Key="Theme.Slider.Thumb.Normal.BorderBrush" Color="#FFACACAC"/>
-
-    <SolidColorBrush x:Key="Theme.Slider.Track.BorderBrush" Color="#FFD6D6D6"/>
-    <SolidColorBrush x:Key="Theme.Slider.Track.BackgroundBrush" Color="#FFE7EAEA"/>
-
     <Style x:Key="RepeatButtonTransparent" TargetType="{x:Type RepeatButton}">
         <Setter Property="OverridesDefaultStyle" Value="True"/>
         <Setter Property="Background" Value="Transparent"/>
@@ -1494,7 +1520,7 @@
             <Trigger Property="IsDragging" Value="True">
                 <Setter Property="Fill" TargetName="grip" Value="{StaticResource Theme.Slider.Thumb.Pressed.BackgroundBrush}"/>
                 <Setter Property="Stroke" TargetName="grip" Value="{StaticResource Theme.Slider.Thumb.Pressed.BorderBrush}"/>
-                <Setter Property="Effect" TargetName="grip" Value="{StaticResource Theme.InputBox.Focus.Shadow}"/>
+                <Setter Property="Effect" TargetName="grip" Value="{StaticResource Theme.InputBox.Focus.ShadowEffect}"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="Fill" TargetName="grip" Value="{StaticResource Theme.Slider.Thumb.Disabled.BackgroundBrush}"/>
@@ -1694,13 +1720,6 @@
 
     <!--#region ToolBar style -->
 
-    <SolidColorBrush x:Key="Theme.ToolBar.Normal.ForegroundBrush" Color="#FF444444" />
-    <SolidColorBrush x:Key="Theme.ToolBar.Normal.BackgroundBrush" Color="#FFF8F8F8"/>
-    <SolidColorBrush x:Key="Theme.ToolBar.Normal.BorderBrush" Color="#FFDADADA" />
-    <SolidColorBrush x:Key="Theme.ToolBar.ToggleTheme.Button.Normal.BackgroundBrush" Color="#FFD7D7D7"/>
-    <SolidColorBrush x:Key="Theme.ToolBar.ToggleTheme.Button.Hover.BackgroundBrush" Color="#FFC0C0C0"/>
-    <SolidColorBrush x:Key="Theme.ToolBar.Gripper" Color="#FFAAAAAA"/>
-
     <Style TargetType="{x:Type ToolBarTray}">
         <Setter Property="Background" Value="{StaticResource Theme.ToolBar.Normal.BackgroundBrush}"/>
         <Style.Triggers>
@@ -1711,7 +1730,7 @@
     </Style>
 
     <Style x:Key="ToolBarVerticalOverflowButtonStyle" TargetType="{x:Type ToggleButton}">
-        <Setter Property="Background" Value="{StaticResource Theme.ToolBar.ToggleTheme.Button.Normal.BackgroundBrush}"/>
+        <Setter Property="Background" Value="{StaticResource Theme.ToolBarToggleButton.Normal.BackgroundBrush}"/>
         <Setter Property="MinHeight" Value="0"/>
         <Setter Property="MinWidth" Value="0"/>
         <Setter Property="Template">
@@ -1736,13 +1755,13 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource Theme.ToolBar.ToggleTheme.Button.Hover.BackgroundBrush}"/>
+                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource Theme.ToolBarToggleButton.MouseOver.BackgroundBrush}"/>
                         </Trigger>
                         <Trigger Property="IsKeyboardFocused" Value="True">
-                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource Theme.ToolBar.ToggleTheme.Button.Hover.BackgroundBrush}"/>
+                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource Theme.ToolBarToggleButton.MouseOver.BackgroundBrush}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Foreground" Value="{StaticResource Theme.ToolBar.Gripper}"/>
+                            <Setter Property="Foreground" Value="{StaticResource Theme.ToolBar.Gripper.FillBrush}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -1756,7 +1775,7 @@
     </Style>
 
     <Style x:Key="ToolBarHorizontalOverflowButtonStyle" TargetType="{x:Type ToggleButton}">
-        <Setter Property="Background" Value="{StaticResource Theme.ToolBar.ToggleTheme.Button.Normal.BackgroundBrush}"/>
+        <Setter Property="Background" Value="{StaticResource Theme.ToolBarToggleButton.Normal.BackgroundBrush}"/>
         <Setter Property="MinHeight" Value="0"/>
         <Setter Property="MinWidth" Value="0"/>
         <Setter Property="Template">
@@ -1781,13 +1800,13 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource Theme.ToolBar.ToggleTheme.Button.Hover.BackgroundBrush}"/>
+                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource Theme.ToolBarToggleButton.MouseOver.BackgroundBrush}"/>
                         </Trigger>
                         <Trigger Property="IsKeyboardFocused" Value="True">
-                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource Theme.ToolBar.ToggleTheme.Button.Hover.BackgroundBrush}"/>
+                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource Theme.ToolBarToggleButton.MouseOver.BackgroundBrush}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Foreground" Value="{StaticResource Theme.ToolBar.Gripper}"/>
+                            <Setter Property="Foreground" Value="{StaticResource Theme.ToolBar.Gripper.FillBrush}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -1799,8 +1818,7 @@
             </DataTrigger>
         </Style.Triggers>
     </Style>
-    <SolidColorBrush x:Key="Theme.ToolBar.Theme.Menu.Normal.BorderBrush" Color="#FFB6BDC5"/>
-    <SolidColorBrush x:Key="Theme.ToolBar.SubTheme.Menu.Normal.BackgroundBrush" Color="#FFFFFFFF"/>
+    
     <Style x:Key="ToolBarThumbStyle" TargetType="{x:Type Thumb}">
         <Setter Property="Template">
             <Setter.Value>
@@ -1812,7 +1830,7 @@
                                     <DrawingBrush.Drawing>
                                         <DrawingGroup>
                                             <GeometryDrawing Brush="White" Geometry="M 1 1 L 1 3 L 3 3 L 3 1 z"/>
-                                            <GeometryDrawing Brush="{StaticResource Theme.ToolBar.Gripper}" Geometry="M 0 0 L 0 2 L 2 2 L 2 0 z"/>
+                                            <GeometryDrawing Brush="{StaticResource Theme.ToolBar.Gripper.FillBrush}" Geometry="M 0 0 L 0 2 L 2 2 L 2 0 z"/>
                                         </DrawingGroup>
                                     </DrawingBrush.Drawing>
                                 </DrawingBrush>
@@ -1829,7 +1847,7 @@
         </Setter>
     </Style>
 
-    <ControlTemplate x:Key="Theme.ToolBar.Horizontal.Template" TargetType="{x:Type ToolBar}">
+    <ControlTemplate x:Key="ToolBarHorizontalControlTemplate" TargetType="{x:Type ToolBar}">
         <Grid x:Name="Grid" SnapsToDevicePixels="True">
             <Grid x:Name="OverflowGrid" HorizontalAlignment="Right" Visibility="Collapsed">
                 <ToggleButton
@@ -1848,9 +1866,9 @@
                     <Grid x:Name="shadow" SnapsToDevicePixels="True" Margin="0" Effect="{x:Null}">
                         <Border
                             x:Name="ToolBarSubMenuBorder"
-                            BorderBrush="{StaticResource Theme.ToolBar.Theme.Menu.Normal.BorderBrush}"
+                            BorderBrush="{StaticResource Theme.ToolBarOverflow.Normal.BorderBrush}"
                             BorderThickness="1"
-                            Background="{StaticResource Theme.ToolBar.SubTheme.Menu.Normal.BackgroundBrush}"
+                            Background="{StaticResource Theme.ToolBarOverflow.Normal.BackgroundBrush}"
                             RenderOptions.ClearTypeHint="Enabled">
                             <ToolBarOverflowPanel
                                 x:Name="PART_ToolBarOverflowPanel"
@@ -1904,7 +1922,7 @@
             </Trigger>
             <Trigger Property="HasDropShadow" SourceName="OverflowPopup" Value="True">
                 <Setter TargetName="shadow" Property="Margin" Value="{StaticResource Theme.InputBox.Shadow.Margin}" />
-                <Setter TargetName="shadow" Property="Effect" Value="{StaticResource Theme.InputBox.Shadow.Effect}" />
+                <Setter TargetName="shadow" Property="Effect" Value="{StaticResource Theme.InputBox.Normal.ShadowEffect}" />
             </Trigger>
             <Trigger Property="Orientation" Value="Vertical">
                 <Setter Property="Style" TargetName="OverflowButton" Value="{StaticResource ToolBarVerticalOverflowButtonStyle}"/>
@@ -1950,7 +1968,7 @@
         <Setter Property="BorderBrush" Value="{StaticResource Theme.ToolBar.Normal.BorderBrush}" />
         <Setter Property="Foreground" Value="{StaticResource Theme.ToolBar.Normal.ForegroundBrush}" />
         <Setter Property="BorderThickness" Value="0 0 0 1" />
-        <Setter Property="Template" Value="{StaticResource Theme.ToolBar.Horizontal.Template}" />
+        <Setter Property="Template" Value="{StaticResource ToolBarHorizontalControlTemplate}" />
         <Style.Triggers>
             <Trigger Property="Orientation" Value="Vertical">
                 <Setter Property="BorderThickness" Value="0 0 1 0" />
@@ -1974,12 +1992,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-
-    <SolidColorBrush x:Key="Theme.ToolBar.Theme.Button.Hover.BorderBrush" Color="#FFAAAAAA"/>
-    <SolidColorBrush x:Key="Theme.ToolBar.Theme.Button.Hover.BackgroundBrush" Color="#FFDDDDDD"/>
-    <SolidColorBrush x:Key="Theme.ToolBar.Theme.Button.Pressed.BorderBrush" Color="#FF909090"/>
-    <SolidColorBrush x:Key="Theme.ToolBar.Theme.Button.Pressed.BackgroundBrush" Color="#FFC0C0C0"/>
-    <SolidColorBrush x:Key="Theme.ToolBar.Theme.Button.Checked.BackgroundBrush" Color="#FFC0C0C0"/>
 
     <Style x:Key="{x:Static ToolBar.ButtonStyleKey}" TargetType="{x:Type Button}">
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
@@ -2011,16 +2023,16 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource Theme.ToolBar.Theme.Button.Hover.BorderBrush}"/>
-                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource Theme.ToolBar.Theme.Button.Hover.BackgroundBrush}"/>
+                            <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource Theme.ToolBarButton.MouseOver.BorderBrush}"/>
+                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource Theme.ToolBarButton.MouseOver.BackgroundBrush}"/>
                         </Trigger>
                         <Trigger Property="IsKeyboardFocused" Value="True">
-                            <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource Theme.ToolBar.Theme.Button.Hover.BorderBrush}"/>
-                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource Theme.ToolBar.Theme.Button.Hover.BackgroundBrush}"/>
+                            <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource Theme.ToolBarButton.MouseOver.BorderBrush}"/>
+                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource Theme.ToolBarButton.MouseOver.BackgroundBrush}"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource Theme.ToolBar.Theme.Button.Pressed.BorderBrush}"/>
-                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource Theme.ToolBar.Theme.Button.Pressed.BackgroundBrush}"/>
+                            <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource Theme.ToolBarButton.Pressed.BorderBrush}"/>
+                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource Theme.ToolBarButton.Pressed.BackgroundBrush}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
@@ -2060,36 +2072,36 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter Property="BorderBrush" Value="{StaticResource Theme.ToolBar.Theme.Button.Hover.BorderBrush}"/>
-                            <Setter Property="Background" Value="{StaticResource Theme.ToolBar.Theme.Button.Checked.BackgroundBrush}"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource Theme.ToolBarButton.MouseOver.BorderBrush}"/>
+                            <Setter Property="Background" Value="{StaticResource Theme.ToolBarButton.Checked.BackgroundBrush}"/>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="BorderBrush" Value="{StaticResource Theme.ToolBar.Theme.Button.Hover.BorderBrush}"/>
-                            <Setter Property="Background" Value="{StaticResource Theme.ToolBar.Theme.Button.Hover.BackgroundBrush}"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource Theme.ToolBarButton.MouseOver.BorderBrush}"/>
+                            <Setter Property="Background" Value="{StaticResource Theme.ToolBarButton.MouseOver.BackgroundBrush}"/>
                         </Trigger>
                         <Trigger Property="IsKeyboardFocused" Value="True">
-                            <Setter Property="BorderBrush" Value="{StaticResource Theme.ToolBar.Theme.Button.Hover.BorderBrush}"/>
-                            <Setter Property="Background" Value="{StaticResource Theme.ToolBar.Theme.Button.Hover.BackgroundBrush}"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource Theme.ToolBarButton.MouseOver.BorderBrush}"/>
+                            <Setter Property="Background" Value="{StaticResource Theme.ToolBarButton.MouseOver.BackgroundBrush}"/>
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="IsMouseOver" Value="True"/>
                                 <Condition Property="IsChecked" Value="True"/>
                             </MultiTrigger.Conditions>
-                            <Setter Property="BorderBrush" Value="{StaticResource Theme.ToolBar.Theme.Button.Pressed.BorderBrush}"/>
-                            <Setter Property="Background" Value="{StaticResource Theme.ToolBar.Theme.Button.Pressed.BackgroundBrush}"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource Theme.ToolBarButton.Pressed.BorderBrush}"/>
+                            <Setter Property="Background" Value="{StaticResource Theme.ToolBarButton.Pressed.BackgroundBrush}"/>
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="IsKeyboardFocused" Value="True"/>
                                 <Condition Property="IsChecked" Value="True"/>
                             </MultiTrigger.Conditions>
-                            <Setter Property="BorderBrush" Value="{StaticResource Theme.ToolBar.Theme.Button.Pressed.BorderBrush}"/>
-                            <Setter Property="Background" Value="{StaticResource Theme.ToolBar.Theme.Button.Pressed.BackgroundBrush}"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource Theme.ToolBarButton.Pressed.BorderBrush}"/>
+                            <Setter Property="Background" Value="{StaticResource Theme.ToolBarButton.Pressed.BackgroundBrush}"/>
                         </MultiTrigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="BorderBrush" Value="{StaticResource Theme.ToolBar.Theme.Button.Pressed.BorderBrush}"/>
-                            <Setter Property="Background" Value="{StaticResource Theme.ToolBar.Theme.Button.Pressed.BackgroundBrush}"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource Theme.ToolBarButton.Pressed.BorderBrush}"/>
+                            <Setter Property="Background" Value="{StaticResource Theme.ToolBarButton.Pressed.BackgroundBrush}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
@@ -2134,11 +2146,6 @@
         <Setter Property="Width" Value="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType={x:Type ScrollContentPresenter}}}" />
     </Style>
 
-    <SolidColorBrush x:Key="Theme.ListBox.Normal.BackgroundBrush" Color="#FFFFFFFF"/>
-    <SolidColorBrush x:Key="Theme.ListBox.Normal.BorderBrush" Color="#FFABADB3"/>
-    <SolidColorBrush x:Key="Theme.ListBox.Disabled.BackgroundBrush" Color="#FFFFFFFF"/>
-    <SolidColorBrush x:Key="Theme.ListBox.Disabled.BorderBrush" Color="#FFD9D9D9"/>
-
     <Style TargetType="{x:Type ListBox}">
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
         <Setter Property="Background" Value="{StaticResource Theme.ListBox.Normal.BackgroundBrush}"/>
@@ -2182,11 +2189,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-
-    <SolidColorBrush x:Key="Theme.ListBoxItem.MouseOver.BackgroundBrush" Color="#FFF4F4F4"/>
-    <SolidColorBrush x:Key="Theme.ListBoxItem.SelectedInactive.BackgroundBrush" Color="#FFE4E4E4"/>
-    <SolidColorBrush x:Key="Theme.ListBoxItem.SelectedActive.BackgroundBrush" Color="#FFDFDFDF"/>
-    <SolidColorBrush x:Key="Theme.ListBoxItem.BorderBrush" Color="#FFDDDDDD" />
 
     <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource BoxItemBase}">
         <Setter Property="SnapsToDevicePixels" Value="True"/>
@@ -2247,18 +2249,6 @@
     <!--#endregion List styles  -->
 
     <!--#region TabControl styles -->
-
-    <SolidColorBrush x:Key="Theme.TabControl.Normal.BackgroundBrush" Color="#FFFFFFFF" />
-    <SolidColorBrush x:Key="Theme.TabControl.Normal.BorderBrush" Color="#FFCCCCCC" />
-    <SolidColorBrush x:Key="Theme.TabPanel.Normal.BackgroundBrush" Color="#FFEEEEEE" />
-    <SolidColorBrush x:Key="Theme.TabItem.Normal.BackgroundBrush" Color="#FFF4F4F4" />
-    <SolidColorBrush x:Key="Theme.TabItem.Normal.ForegroundBrush" Color="#FF000000" />
-    <SolidColorBrush x:Key="Theme.TabItem.Normal.BorderBrush" Color="#FFCCCCCC" />
-    <SolidColorBrush x:Key="Theme.TabItem.MouseOver.BackgroundBrush" Color="#FFFAFAFA" />
-    <SolidColorBrush x:Key="Theme.TabItem.Selected.BackgroundBrush" Color="#FFFFFFFF" />
-    <SolidColorBrush x:Key="Theme.TabItem.Selected.ForegroundBrush" Color="#FF666666" />
-    <SolidColorBrush x:Key="Theme.TabItem.Disabled.BackgroundBrush" Color="#FFFFFFFF" />
-    <SolidColorBrush x:Key="Theme.TabItem.Disabled.ForegroundBrush" Color="#FF666666" />
 
     <Style x:Key="{x:Type TabItem}" TargetType="{x:Type TabItem}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
